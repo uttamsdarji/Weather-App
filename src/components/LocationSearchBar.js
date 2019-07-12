@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { LocationSearchAPI } from '../APIKeys.js';
 
 class LocationSearchBar extends React.Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class LocationSearchBar extends React.Component {
   }
 
   fetchDataByText = (queryText) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+queryText+'.json?access_token=pk.eyJ1IjoidXNkYXJqaSIsImEiOiJjanhvbnNqY2QwODczM21ybnJybGUzM3l0In0.hUTTdbflff_BO_c7S3MldQ';
+    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+queryText+'.json?access_token=' + LocationSearchAPI;
     fetch(url)
     .then(results => results.json())
     .then((sdata) => {

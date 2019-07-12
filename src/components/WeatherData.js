@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { WeatherAPI } from '../APIKeys.js';
 
 class WeatherData extends React.Component {
 
@@ -26,7 +26,7 @@ class WeatherData extends React.Component {
   }
 
   fetchDataByGeo = (latitude,longitude) => {
-    const url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=9b32cf97b04c03ad2e6f0960ea7bdce3';
+    const url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + WeatherAPI;
     fetch(url)
     .then(results => results.json())
     .then((wdata) => {
